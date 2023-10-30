@@ -1,0 +1,1986 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="DIA data analysis" href="Software_DIA_General.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Benchmark data sets - Appendix for a DIA review</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Appendix for a DIA review</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Appendix for a DIA review</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Acquisition:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Acquisition_Full_Scan_DIA.html">Full scan DIA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Acquisition_Windowed_DIA.html">Windowed DIA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Acquisition_PASEF_DIA.html">PASEF enhanced DIA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Acquisition_Unconventional.html">Unconventional methods</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Software_DIA_General.html">DIA data analysis</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Datasets:</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Benchmark data sets</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="benchmark-data-sets">
+<h1>Benchmark data sets<a class="headerlink" href="#benchmark-data-sets" title="Link to this heading">#</a></h1>
+<section id="summary-table">
+<h2>Summary table<a class="headerlink" href="#summary-table" title="Link to this heading">#</a></h2>
+<div class="table-wrapper docutils container" id="table">
+<table class="docutils align-default" id="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Year</p></th>
+<th class="head"><p>Ref.</p></th>
+<th class="head"><p>No.</p></th>
+<th class="head"><p>Short desc.</p></th>
+<th class="head"><p>Target</p></th>
+<th class="head"><p>Background</p></th>
+<th class="head"><p>Instrument</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2014</p></td>
+<td><p><a class="footnote-reference brackets" href="#openswath" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>SGS</p></td>
+<td><p>422 SIS peptides</p></td>
+<td><p>None / yeast / HeLa</p></td>
+<td><p>TTOF 5600</p></td>
+</tr>
+<tr class="row-odd"><td><p>2015</p></td>
+<td><p><a class="footnote-reference brackets" href="#diaumpire" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>UPS1</p></td>
+<td><p>UPS1</p></td>
+<td><p>None</p></td>
+<td><p>TTOF 5600</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>2</p></td>
+<td><p>UPS2</p></td>
+<td><p>UPS2</p></td>
+<td><p>None</p></td>
+<td><p>TTOF 5600</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>3</p></td>
+<td><p>UPS2 spike</p></td>
+<td><p>UPS2</p></td>
+<td><p>Tryptic E. coli</p></td>
+<td><p>TTOF 5600</p></td>
+</tr>
+<tr class="row-even"><td><p>2016</p></td>
+<td><p><a class="footnote-reference brackets" href="#id18" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>HYE124</p></td>
+<td><p>Tryptic yeast+ecoli</p></td>
+<td><p>Tryptic HeLa</p></td>
+<td><p>TTOF 5600+/6600</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>2</p></td>
+<td><p>HYE110</p></td>
+<td><p>Tryptic yeast+ecoli</p></td>
+<td><p>Tryptic HeLa</p></td>
+<td><p>TTOF 6600</p></td>
+</tr>
+<tr class="row-even"><td><p>2017</p></td>
+<td><p><a class="footnote-reference brackets" href="#ipf" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>SynHeavyPhos</p></td>
+<td><p>579 SIS phosphopeptides</p></td>
+<td><p>Tryptic HEK293</p></td>
+<td><p>TTOF 5600+</p></td>
+</tr>
+<tr class="row-odd"><td><p>2017</p></td>
+<td><p><a class="footnote-reference brackets" href="#id19" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>HYEC</p></td>
+<td><p>Tryptic yeast+ecoli+celegans</p></td>
+<td><p>Tryptic HeLa</p></td>
+<td><p>QE HF</p></td>
+</tr>
+<tr class="row-even"><td><p>2018</p></td>
+<td><p><a class="footnote-reference brackets" href="#specter" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>SynPhos96</p></td>
+<td><p>96 NS phosphopeptides</p></td>
+<td><p>Tryptic HEK293</p></td>
+<td><p>QE HF Plus</p></td>
+</tr>
+<tr class="row-odd"><td><p>2020</p></td>
+<td><p><a class="footnote-reference brackets" href="#ddiaptm" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>MixPhos</p></td>
+<td><p>Yeast phosphoproteome</p></td>
+<td><p>HeLa phosphoproteome</p></td>
+<td><p>QE HF-X</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>2</p></td>
+<td><p>SynPhos200+</p></td>
+<td><p>200+ NS phosphopeptides</p></td>
+<td><p>Yeast phosphoproteome</p></td>
+<td><p>QE HF-X</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>3</p></td>
+<td><p>Phos-stoich</p></td>
+<td><p>Partial-dephos yeast phosproteome</p></td>
+<td><p>HeLa phosphoproteome</p></td>
+<td><p>QE HF-X</p></td>
+</tr>
+<tr class="row-even"><td><p>2020</p></td>
+<td><p><a class="footnote-reference brackets" href="#diapasef" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>HY13 diaPASEF</p></td>
+<td><p>Tryptic yeast</p></td>
+<td><p>Tryptic HeLa</p></td>
+<td><p>timsTOF Pro</p></td>
+</tr>
+<tr class="row-odd"><td><p>2021</p></td>
+<td><p><a class="footnote-reference brackets" href="#maxdia" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>HYE124 diaPASEF</p></td>
+<td><p>Tryptic yeast+ecoli</p></td>
+<td><p>Tryptic HeLa</p></td>
+<td><p>timsTOF Pro</p></td>
+</tr>
+<tr class="row-even"><td><p>2021</p></td>
+<td><p><a class="footnote-reference brackets" href="#diagps" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>SynPhos166</p></td>
+<td><p>166 NS phosphopeptides</p></td>
+<td><p>Tryptic yeast</p></td>
+<td><p>Fusion Lumos</p></td>
+</tr>
+<tr class="row-odd"><td><p>2021</p></td>
+<td><p><a class="footnote-reference brackets" href="#ups1multiacqui" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>UPS1 spike</p></td>
+<td><p>UPS1</p></td>
+<td><p>Tryptic E. coli</p></td>
+<td><p>Orbitrap Fusion</p></td>
+</tr>
+<tr class="row-even"><td><p>2022</p></td>
+<td><p><a class="footnote-reference brackets" href="#multihye" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>HYE124</p></td>
+<td><p>Tryptic yeast+ecoli</p></td>
+<td><p>Tryptic K562</p></td>
+<td><p>TTOF 5600</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>2</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>TTOF 6600+</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>3</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Synapt G2-Si</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>4</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>QE HF-X</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>5</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Synapt XS</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>6</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>timsTOF Pro</p></td>
+</tr>
+<tr class="row-even"><td><p>2022</p></td>
+<td><p><a class="footnote-reference brackets" href="#plexdia" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>HYE plexDIA</p></td>
+<td><p>Tryptic yeast+ecoli</p></td>
+<td><p>Tryptic U-937 or Jurkat</p></td>
+<td><p>QE</p></td>
+</tr>
+<tr class="row-odd"><td><p>2022</p></td>
+<td><p><a class="footnote-reference brackets" href="#zeno" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>HY12 Zeno</p></td>
+<td><p>Tryptic yeast</p></td>
+<td><p>Tryptic K562</p></td>
+<td><p>ZenoTOF 7600</p></td>
+</tr>
+<tr class="row-even"><td><p>2022</p></td>
+<td><p><a class="footnote-reference brackets" href="#hebench" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>HE 4cond</p></td>
+<td><p>Tryptic E. coli</p></td>
+<td><p>Tryptic human lymph nodes</p></td>
+<td><p>Orbitrap Eclipse</p></td>
+</tr>
+<tr class="row-odd"><td><p>2023</p></td>
+<td><p><a class="footnote-reference brackets" href="#mybench" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>MY 7cond</p></td>
+<td><p>Tryptic mouse brain membrane</p></td>
+<td><p>Tryptic yeast</p></td>
+<td><p>QE HF/timsTOF Pro</p></td>
+</tr>
+<tr class="row-even"><td><p>2023</p></td>
+<td><p><a class="footnote-reference brackets" href="#immuno" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>B57</p></td>
+<td><p>HLA-B*57:01</p></td>
+<td><p>Tryptic HeLa</p></td>
+<td><p>Orbitrap Fusion</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><em>Target</em></dt><dd><ul>
+<li><p>SIS: stable isotope-labeled standard (synthetic peptides in all cases)</p></li>
+<li><p>NS: non-labeled standard (synthetic peptides in all cases)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</section>
+<section id="individuals">
+<h2>Individuals<a class="headerlink" href="#individuals" title="Link to this heading">#</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="openswath-sgs">
+<h3>OpenSWATH SGS<a class="headerlink" href="#openswath-sgs" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="openswath" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data. 10.1038/nbt.2841</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Röst et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2014</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>SWATH-MS Gold Standard (SGS)</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PASS00289</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>TTOF 5600</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>25 m/z wide-window SWATH</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>422 SIS peptides</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Water / yeast BY4741 tryptic digest / HeLa tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>Pure SIS / SIS + yeast background / SIS + human background. SIS concentration in each sample from 1x to 512x. 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>DDA runs for pure SIS peptides</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dia-umpire-ups">
+<h3>DIA-Umpire UPS<a class="headerlink" href="#dia-umpire-ups" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="diaumpire" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>DIA-Umpire: comprehensive computational framework for data-independent acquisition proteomics. 10.1038/nmeth.3255</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tsou et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2015</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>UPS1</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD001587</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>TTOF 5600</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>25 m/z wide-window SWATH (long MS1 ion accumulation (250 ms) or not (50 ms))</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>UPS1</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>Pure UPS1. 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>/</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Dataset 2<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>UPS2</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD001587</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>TTOF 5600</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>25 m/z wide-window SWATH (long MS1 ion accumulation (250 ms))</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>UPS2</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>Pure UPS2. 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>DDA runs for pure UPS2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Dataset 3<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>UPS2 spike-in</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD001587</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>TTOF 5600</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>25 m/z wide-window SWATH (long MS1 ion accumulation (250 ms) or not (50 ms))</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>UPS2</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><ol class="upperalpha simple" start="5">
+<li><p>coli tryptic digest</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>UPS2 + E. coli background. 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>/</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="lfqbench">
+<h3>LFQBench<a class="headerlink" href="#lfqbench" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id18" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>A multicenter study benchmarks software tools for label-free proteome quantification. 10.1038/nbt.3685</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Navarro et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2016</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HYE124</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD002952</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>TTOF 5600+ / TTOF 6600</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>25 m/z wide-window SWATH / 64 variable wide-window SWATH</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of yeast / E. coli</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>HeLa tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: HYE 65/30/5; B: HYE 65/15/20. 3 replicates for each sample.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>H/Y/E each has 3 DDA runs.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Dataset 2<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HYE110</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD002952</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>TTOF 6600</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>25 m/z wide-window SWATH / 12.5 m/z wide-window SWATH / 32 variable wide-window SWATH / 64 variable wide-window SWATH</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of yeast / E. coli</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>HeLa tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: HYE 67/30/3; B: HYE 67/3/30. 3 replicates for each sample.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>/</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ipf-sis-phosphopeptides">
+<h3>IPF SIS phosphopeptides<a class="headerlink" href="#ipf-sis-phosphopeptides" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="ipf" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Inference and quantification of peptidoforms in large sample cohorts by SWATH-MS. 10.1038/nbt.3908</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Rosenberger et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2017</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>SynHeavyPhos</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD004573</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>TTOF 5600+</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>64 variable wide-window SWATH</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>579 synthetic SIS phosphopeptides</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>HEK293 tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>Phosphorylation</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>Synthetic + HEK293 background. Total 13 dilution ratios 1:0, 1:1, …, 1:127. Single injection without replicate.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>DDA runs for pure synthetic phosphopeptides. 3 replicates.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hyec">
+<h3>HYEC<a class="headerlink" href="#hyec" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id19" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>Optimization of Experimental Parameters in Data-Independent Mass Spectrometry Significantly Increases Depth and Reproducibility of Results. 10.1074/mcp.RA117.000314</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Bruderer et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2017</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HYEC</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD005573</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>QE HF</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>Variable wide-window DIA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of Yeast / E. coli / C. Elegans</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>HeLa tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>1) Small fold change sample set: H 1:1; Y 1:1.2; E 1.3:1; C 1:1.1. 2) Large fold change sample set: H 1:1; Y 1.6:1; E 1:4; C 1:2. Each sample has 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>A DDA library in Spectronaut .kit format is available.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="specter-synthetic-phospho">
+<h3>Specter synthetic phospho<a class="headerlink" href="#specter-synthetic-phospho" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="specter" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p>Specter: linear deconvolution for targeted analysis of data-independent acquisition mass spectrometry proteomics. 10.1038/nmeth.4643</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Peckner et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2018</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>SynPhos</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD006722</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>QE HF Plus</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>56 x 22 m/z inter-cycle overlapping-window DIA (11 m/z shift)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>96 NS phosphopeptides</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>HEK293 tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>Phosphorylation</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>NS phosphopeptides + HEK293 background. Total 5 samples with synthetic concentrations from 1x to 16x. 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>DDA runs of all five spiked-in samples with 1 injection</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hy-phospho-synthetic-phospho-phospho-stoichiometry">
+<h3>HY phospho / synthetic phospho / Phospho-stoichiometry<a class="headerlink" href="#hy-phospho-synthetic-phospho-phospho-stoichiometry" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="ddiaptm" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<p>Rapid and site-specific deep phosphoproteome profiling by data-independent acquisition without the need for spectral libraries. 10.1038/s41467-020-14609-1</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Bekker-Jensen et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2020</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>Mixed phosphoproteome</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD014525</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>QE HF-X</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>14 m/z wide-window DIA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Ti-IMAC enriched yeast tryptic digest</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Ti-IMAC enriched HeLa tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>Phosphorylation</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>Tryptic digests of yeast BY4742 and HeLa are mixed in 5 ratios of 0.25:1, 0.5:1, 1:1, 1.5:1, and 2:1, and mixed samples are Ti-IMAC enriched. Each sample has 6 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>In addition to 3 yeast only and 3 HeLa only DIA runs, all DIA runs have their corresponding DDA runs with same injection numbers.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Dataset 2<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>SynPhos200p</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD014525</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>QE HF-X</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>14 m/z wide-window DIA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Multi-source NS phosphopeptides</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Ti-IMAC enriched yeast tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>Phosphorylation</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>Five sources of synthetic phosphopeptides: JPT (SpikeMix PTM-kit 52 1001098; SpikeMix PTM-kit 54 1001100) and Sigma-Aldrich (MS PhosphoMix 1 Light MSP1L, MS PhosphoMix 2 Light MSP2L, MS PhosphoMix 3 Light MSP3L). All phosphopeptides are mixed and spiked into yeast phosphoproteome in 4 dilution concentrations: 1x, 10x, 100x, and 1000x. Each sample has 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>All DIA runs have their corresponding DDA runs with same injection numbers.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Dataset 3<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>Phospho-stoichiometry</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD014525</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>QE HF-X</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>14 m/z wide-window DIA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Ti-IMAC enriched yeast tryptic digest with or without phosphatase treatment</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Ti-IMAC enriched HeLa tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>Phosphorylation</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>After yeast tryptic digest was Ti-IMAC enriched, half was phosphatase treated while another half was mock treated. Two treated samples are mixed and spiked into HeLa tryptic phosphoproteome background, and formed expected phosphorylation stoichiometry of 1%, 10%, 50%, 90%, and 99%. Each final sample has 5 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>All DIA runs have their corresponding DDA runs with same injection numbers.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hy13-diapasef">
+<h3>HY13 diaPASEF<a class="headerlink" href="#hy13-diapasef" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="diapasef" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
+<p>diaPASEF: parallel accumulation-serial fragmentation combined with data-independent acquisition. 10.1038/s41592-020-00998-0</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Meier et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2020</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HY13 diaPASEF</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD017703 (<a class="reference external" href="ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/12/PXD017703">ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/12/PXD017703</a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>timsTOF Pro</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>diaPASEF 16 scans</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Yeast tryptic digest</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>HeLa tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: H/Y 200/45; B: H/Y 200/15. 3 replicates</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>Fractionated yeast and HeLa samples are analyzed by ddaPASEF.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hye124-diapasef">
+<h3>HYE124 diaPASEF<a class="headerlink" href="#hye124-diapasef" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="maxdia" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">9</a><span class="fn-bracket">]</span></span>
+<p>MaxDIA enables library-based and library-free data-independent acquisition proteomics. 10.1038/s41587-021-00968-7</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Sinitcyn et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2021</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HYE124 timsTOF</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD022589</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>timsTOF Pro</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>diaPASEF 16 scans</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of Yeast / E. coli</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>HeLa tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: HYE 65/30/5; B: HYE 65/15/20. Triplicate injections for each sample.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>ddaPASEF runs for three species individually. Sample of each species are off-line fractionated to 5 fractions, and two injections are performed for each fraction. Stored in PXD022582.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dia-gps-166-ns-phosphopeptides">
+<h3>DIA-GPS 166 NS phosphopeptides<a class="headerlink" href="#dia-gps-166-ns-phosphopeptides" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="diagps" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">10</a><span class="fn-bracket">]</span></span>
+<p>A data-independent acquisition-based global phosphoproteomics system enables deep profiling. 10.1038/s41467-021-22759-z</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Kitata et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2021</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>SynPhos166</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD019797</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>Fusion Lumos</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>10 m/z wide-window DIA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>166 NS phosphopeptides</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Yeast tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>Phosphorylation</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>NS phosphopeptides + yeast background. Total 5 samples with synthetic phosphopeptide concentrations from 1x to 20x. 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>3 DDA runs and 3 DIA runs of pure synthetic phosphopeptides.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ups1-orbi-multiple-acquisition-methods">
+<h3>UPS1 Orbi multiple acquisition methods<a class="headerlink" href="#ups1-orbi-multiple-acquisition-methods" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="ups1multiacqui" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">11</a><span class="fn-bracket">]</span></span>
+<p>Extensive and Accurate Benchmarking of DIA Acquisition Methods and Software Tools Using a Complex Proteomic Standard. 10.1021/acs.jproteome.1c00490</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gotti et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2021</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>UPS1 spike-in</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD026600</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>Orbitrap Fusion</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>8 m/z wide-window / 15 m/z wide-window / 8 m/z inter-cycle overlapping window (4 m/z shift) / 8 m/z and 15 m/z variable wide-window</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>UPS1</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><ol class="upperalpha simple" start="5">
+<li><p>coli tryptic digest</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>UPS1 + E. coli background. Total 8 samples with UPS1 concentrations from 1x to 500x. 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>48 DDA runs for 48 fractionated E. coli samples and 1 DDA run for UPS1+E. coli sample</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hye124-multiple-instruments-and-acquisition-methods">
+<h3>HYE124 multiple instruments and acquisition methods<a class="headerlink" href="#hye124-multiple-instruments-and-acquisition-methods" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="multihye" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">12</a><span class="fn-bracket">]</span></span>
+<p>A comprehensive LFQ benchmark dataset on modern day acquisition strategies in proteomics. 10.1038/s41597-022-01216-6</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Van Puyvelde et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2022</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HYE124-5600</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD028735</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>TTOF 5600</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>64 variable wide-window SWATH</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of Yeast / E. coli</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Human K562 tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: HYE 65/30/5; B: HYE 65/15/20.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>1) 3 DDA runs for each species, resulted in total 9 runs. 2) 8 narrow-window DIA injections with 2 m/z window size.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Dataset 2<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HYE124-6600</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD028735</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>TTOF 6600+</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>1) 99 variable windowed SWATH. 2) Scanning SWATH 5 m/z window (1 m/z Q1 bin).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of Yeast / E. coli</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Human K562 tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: HYE 65/30/5; B: HYE 65/15/20.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>1) 3 DDA runs for each species, resulted in total 9 runs. 2) 8 narrow-window scanning SWATH injections with 1 m/z window size (0.2 m/z Q1 bin).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Dataset 3<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HYE124-G2Si</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD028735</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>Synapt G2-Si</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>UDMS<sup>E</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of Yeast / E. coli</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Human K562 tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: HYE 65/30/5; B: HYE 65/15/20.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>3 DDA runs for each species, resulted in total 9 runs.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Dataset 4<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HYE124-HFX</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD028735</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>QE HF-X</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>8 m/z inter-cycle overlapping-window DIA (4 m/z shift)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of Yeast / E. coli</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Human K562 tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: HYE 65/30/5; B: HYE 65/15/20.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>1) 3 DDA runs for each species, resulted in total 9 runs. 2) 8 narrow-window DIA injections with 4 m/z inter-cycle overlapping windows (2 m/z shift).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Dataset 5<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HYE124-XS</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD028735</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>Synapt XS</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>SONAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of Yeast / E. coli</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Human K562 tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: HYE 65/30/5; B: HYE 65/15/20.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>1) 3 DDA runs for each species, resulted in total 9 runs. 2) 8 narrow-window SONAR injections.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Dataset 6<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HYE124-timsTOF</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD028735</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>timsTOF Pro</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>diaPASEF 16 scans</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of Yeast / E. coli</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Human K562 tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: HYE 65/30/5; B: HYE 65/15/20.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>3 ddaPASEF runs for each species, resulted in total 9 runs.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hye-plexdia">
+<h3>HYE plexDIA<a class="headerlink" href="#hye-plexdia" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="plexdia" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">13</a><span class="fn-bracket">]</span></span>
+<p>Increasing the throughput of sensitive proteomics by plexDIA. 10.1038/s41587-022-01389-w</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Derks et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2022</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>plexDIA HYE124/063/066</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD029531 (<a class="reference external" href="ftp://massive.ucsd.edu/v01/MSV000089093">ftp://massive.ucsd.edu/v01/MSV000089093</a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>QE</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>5 MS1-inserted 25 variable wide-window DIA / 40 variable wide-window DIA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digests of Yeast / E. coli</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Human tryptic digest (U-937 or Jurkat)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: non-labeled E. coli 20%, yeast 15%, U-937 65%; B: mTRAQ4 E. coli 5%, yeast 30%, U-937 65%; C: mTRAQ8 E. coli 30%, yeast 5%, Jurkat 65%</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>All DIA runs have their corresponding DDA runs with same injection numbers.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hy12-zeno-swath">
+<h3>HY12 Zeno SWATH<a class="headerlink" href="#hy12-zeno-swath" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="zeno" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">14</a><span class="fn-bracket">]</span></span>
+<p>High-throughput proteomics of nanogram-scale samples with Zeno SWATH MS. 10.7554/eLife.83947</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Wang et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2022</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HY12 Zeno SWATH</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD036786 (<a class="reference external" href="ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/12/PXD036786">ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/12/PXD036786</a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>ZenoTOF 7600</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>85 variable windowed DIA (6-10 m/z window size)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Yeast tryptic digest</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>K562 tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>A: HY 30/35; B: HY 30/17.5. Each sample has 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>/</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="he-4-conditions-orbi">
+<h3>HE 4 conditions Orbi<a class="headerlink" href="#he-4-conditions-orbi" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="hebench" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">15</a><span class="fn-bracket">]</span></span>
+<p>Benchmarking of analysis strategies for data-independent acquisition proteomics using a large-scale dataset comprising inter-patient heterogeneity. 10.1038/s41467-022-30094-0</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Fröhlich et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2022</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>HE4Cond</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>EGAD00010002223 (request required)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>Orbitrap Eclipse</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>8 m/z inter-cycle overlapping-window DIA (4 m/z shift)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><ol class="upperalpha simple" start="5">
+<li><p>coli tryptic digest</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>92 tryptic digests from 92 human lymph nodes</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>Human tissue samples are from 92 different individuals, and 4 groups are formed with 23 samples in each. 4 groups have different amounts of spiked E. coli digest: no E. coli as control, 1:25, 1:12, and 1:6. Each sample is injected once and total 92 DIA data were acquired.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>1) From each group, 3 samples are picked, and all 12 samples are mixed into one. The pooled sample is fractionated and fractions are further pooled in groups of two, and 10 pooled samples are acquired by DDA. 2) The pooled samples were also acquired by narrow-window DIA with a 2 m/z isolation window and total 6 injections to cover 400-1000 m/z.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="my-7-conditions-orbi-timstof">
+<h3>MY 7 conditions Orbi+timsTOF<a class="headerlink" href="#my-7-conditions-orbi-timstof" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="mybench" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">16</a><span class="fn-bracket">]</span></span>
+<p>Benchmarking commonly used software suites and analysis workflows for DIA proteomics and phosphoproteomics. 10.1038/s41467-022-35740-1</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lou et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2023</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>MY7Cond</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD034709</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>QE HF / timsTOF Pro</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>Variable wide-window DIA / diaPASEF 16 scans</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Tryptic digest of mouse brain membrane proteome</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>Yeast tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>Mouse brain membrane protein digests were spiked into a yeast proteome background in seven defined proportions, yielding one reference and six mixtures with fixed mouse protein ratios relative to the reference: 1:4, 1:2, 2:3, 1:1, 3:2, and 2:1. Each sample is prepared in five replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>Mouse and yeast peptide digestions are first offline pre-fractionated to 8 fractions for each. 16 DDA runs and 16 diaPASEF runs are acquired on respective instruments.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="immunopeptidomics">
+<h3>Immunopeptidomics<a class="headerlink" href="#immunopeptidomics" title="Link to this heading">#</a></h3>
+<p>back to <a class="reference internal" href="#table">table</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="immuno" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">17</a><span class="fn-bracket">]</span></span>
+<p>Benchmarking Bioinformatics Pipelines in Data-Independent Acquisition Mass Spectrometry for Immunopeptidomics. 10.1016/j.mcpro.2023.100515</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Shahbazy et al.</p>
+</dd>
+<dt class="field-even">Year<span class="colon">:</span></dt>
+<dd class="field-even"><p>2023</p>
+</dd>
+<dt class="field-odd">Dataset 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Short name</p></td>
+<td><p>Immunopeptide spike</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository ID</p></td>
+<td><p>PXD034539</p></td>
+</tr>
+<tr class="row-odd"><td><p>MS instrument</p></td>
+<td><p>Orbitrap Fusion</p></td>
+</tr>
+<tr class="row-even"><td><p>Acquisition method</p></td>
+<td><p>24 m/z wide-window DIA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target sample</p></td>
+<td><p>Immunopeptides isolated and purified from C1R-B*57:01 cells</p></td>
+</tr>
+<tr class="row-even"><td><p>Background sample</p></td>
+<td><p>HeLa tryptic digest</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTM</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Other sample</p></td>
+<td><p>Biognosys iRT peptides (C18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brief design</p></td>
+<td><p>Spike immunopeptides into HeLa background in 6 dilution ratios: 1, 0.8, 0.6, 0.4, 0.2, 0. Each sample is acquired for 3 replicates.</p></td>
+</tr>
+<tr class="row-even"><td><p>Additional runs</p></td>
+<td><p>HLA-B*57:01 bound peptides are offline pre-fractionated into 9 fractions, and 9 DDA data are acquired.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="Software_DIA_General.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">DIA data analysis</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Shui Lab
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/Shui-Group/DIAReviewAppendix" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Benchmark data sets</a><ul>
+<li><a class="reference internal" href="#summary-table">Summary table</a></li>
+<li><a class="reference internal" href="#individuals">Individuals</a><ul>
+<li><a class="reference internal" href="#openswath-sgs">OpenSWATH SGS</a></li>
+<li><a class="reference internal" href="#dia-umpire-ups">DIA-Umpire UPS</a></li>
+<li><a class="reference internal" href="#lfqbench">LFQBench</a></li>
+<li><a class="reference internal" href="#ipf-sis-phosphopeptides">IPF SIS phosphopeptides</a></li>
+<li><a class="reference internal" href="#hyec">HYEC</a></li>
+<li><a class="reference internal" href="#specter-synthetic-phospho">Specter synthetic phospho</a></li>
+<li><a class="reference internal" href="#hy-phospho-synthetic-phospho-phospho-stoichiometry">HY phospho / synthetic phospho / Phospho-stoichiometry</a></li>
+<li><a class="reference internal" href="#hy13-diapasef">HY13 diaPASEF</a></li>
+<li><a class="reference internal" href="#hye124-diapasef">HYE124 diaPASEF</a></li>
+<li><a class="reference internal" href="#dia-gps-166-ns-phosphopeptides">DIA-GPS 166 NS phosphopeptides</a></li>
+<li><a class="reference internal" href="#ups1-orbi-multiple-acquisition-methods">UPS1 Orbi multiple acquisition methods</a></li>
+<li><a class="reference internal" href="#hye124-multiple-instruments-and-acquisition-methods">HYE124 multiple instruments and acquisition methods</a></li>
+<li><a class="reference internal" href="#hye-plexdia">HYE plexDIA</a></li>
+<li><a class="reference internal" href="#hy12-zeno-swath">HY12 Zeno SWATH</a></li>
+<li><a class="reference internal" href="#he-4-conditions-orbi">HE 4 conditions Orbi</a></li>
+<li><a class="reference internal" href="#my-7-conditions-orbi-timstof">MY 7 conditions Orbi+timsTOF</a></li>
+<li><a class="reference internal" href="#immunopeptidomics">Immunopeptidomics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=837179f8"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>
