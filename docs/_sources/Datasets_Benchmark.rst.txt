@@ -37,6 +37,9 @@ Year      Ref.                       No.       Short desc.       Target         
 2022      [#22HEBench]_              1         HE 4cond          Tryptic E. coli                       Tryptic human lymph nodes       Orbitrap Eclipse
 2023      [#23MYBench]_              1         MY 7cond          Tryptic mouse brain membrane          Tryptic yeast                   QE HF/timsTOF Pro
 2023      [#23Immuno]_               1         B57               HLA-B*57:01                           Tryptic HeLa                    Orbitrap Fusion
+2023      [#23mDIA]_                 1         BSA mDIA          Tryptic BSA                           None                            Exploris 480
+..                                   2         HYE mDIA          Tryptic yeast+ecoli                   Tryptic HeLa                    timsTOF HT
+2023      [#23UPS2]_                 1         UPS2 spike        UPS2                                  Tryptic yeast                   QE HF
 ========  =========================  ========  ================  ====================================  ==============================  ====================
 
 .. note::
@@ -677,3 +680,73 @@ Brief design            Spike immunopeptides into HeLa background in 6 dilution 
 Additional runs         HLA-B*57:01 bound peptides are offline pre-fractionated into 9 fractions, and 9 DDA data are acquired.
 ======================  ========================================================================================================================================
 
+
+mDIA BSA and HYE
+^^^^^^^^^^^^^^^^^^^^^
+
+back to table_
+
+:Reference: 
+
+.. [#23mDIA] Robust dimethyl-based multiplex-DIA doubles single-cell proteome depth via a reference channel. 10.15252/msb.202211503
+
+:Authors: Thielert et al.
+:Year: 2023
+
+:Dataset 1:
+
+======================  ==============================================================================================================================================================
+Short name              mDIA BSA
+Repository ID           PXD038632
+MS instrument           Orbitrap Exploris 480
+Acquisition method      Variable wide-window DIA
+Target sample           Tryptic digests of BSA
+Background sample       /
+PTM                     /
+Other sample            /
+Brief design            Δ0/Δ4/Δ8 mix: 1\) 17/2/1; 2\) 7/2/1; 3\) 5/3/2. Three replicates for each sample
+Additional runs         /
+======================  ==============================================================================================================================================================
+
+:Dataset 2:
+
+======================  ==============================================================================================================================================================
+Short name              mDIA HYE
+Repository ID           PXD038632
+MS instrument           timsTOF HT
+Acquisition method      diaPASF / MS1-enhanced diaPASEF
+Target sample           Tryptic digests of Yeast / E. coli
+Background sample       Human tryptic digest
+PTM                     /
+Other sample            /
+Brief design            Δ0: HYE 65/15/20; Δ4: HYE 65/30/5; Δ8: HYE 65/5/30. Three replicates for each sample
+Additional runs         /
+======================  ==============================================================================================================================================================
+
+
+UPS2 Orbi
+^^^^^^^^^^^^^^^^^^^^^
+
+back to table_
+
+:Reference: 
+
+.. [#23UPS2] Benchmarking DIA data analysis workflows. 10.1101/2023.06.02.543441
+
+:Authors: Staes et al.
+:Year: 2023
+
+:Dataset 1:
+
+======================  ====================================================================================================================================================================
+Short name              UPS2 spike
+Repository ID           / (hasn't been released in pre-print)
+MS instrument           QE HF
+Acquisition method      10 m/z inter-cycle overlapping-window DIA (5 m/z shift) (400-910 in odd-numbered cycle, 395-905 in even-numbered cycle, 1 MS1 scan every 30 MS2 scans)
+Target sample           Tryptic UPS2
+Background sample       Yeast tryptic digest
+PTM                     /
+Other sample            Biognosys iRT peptides (C18)
+Brief design            UPS2 + yeast background. Total 5 samples with UPS2 concentrations from 1x to 10x. 3 replicates.
+Additional runs         1\) Same UPS2 + yeast acquired by DDA (also 15 runs). 2\) 3 pure UPS1 DDA runs and 3 pure UPS2 DDA runs.
+======================  ====================================================================================================================================================================

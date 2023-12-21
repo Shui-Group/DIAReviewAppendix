@@ -83,7 +83,7 @@ back to table_
 
 :Reference: 
 
-.. [#HybridDIA] Quantitative shotgun proteome analysis by direct infusion. 10.1038/s41592-020-00999-z
+.. [#HybridDIA] Hybrid-DIA: intelligent data acquisition integrates targeted and discovery proteomics to analyze phospho-signaling in single spheroids. 10.1038/s41467-023-39347-y
 
 ======================  =============================================================================================================================
 Full name               Hybrid-DIA

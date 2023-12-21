@@ -65,7 +65,7 @@ back to table_
 
 :Reference: 
 
-.. [#DIA] Automated approach for quantitative analysis of complex peptide mixtures from tandem mass spectra. 10/dm8rm4
+.. [#DIA] Automated approach for quantitative analysis of complex peptide mixtures from tandem mass spectra. 10.1038/nmeth705
 
 ======================  =============================================================================================================================
 Full name               Data-Independent Acquisition
@@ -314,6 +314,7 @@ back to table_
 :Reference: 
 
 .. [#SONAR] Scanning Quadrupole Data-Independent Acquisition, Part A: Qualitative and Quantitative Characterization. 10.1021/acs.jproteome.7b00464
+.. [#SONAR2] Scanning Quadrupole Data-Independent Acquisition, Part B: Application to the Analysis of the Calcineurin-Interacting Proteins during Treatment of Aspergillus fumigatus with Azole and Echinocandin Antifungal Drugs. 10.1021/acs.jproteome.7b00499
 
 ======================  ===================================================================================================================================
 Full name               SONAR

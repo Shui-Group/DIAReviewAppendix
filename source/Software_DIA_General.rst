@@ -34,14 +34,15 @@ FIGS [#FIGS]_                                      2021 July   Not              
 mstc [#mstc]_                                      2021 July   Not                  I               /               C               O
 CsoDIAq [#CsoDIAq]_                                2021 Sep.   Active               L               S               C & G           O
 DreamDIA\ :sup:`XMBD` [#DreamDIAXMBD]_             2021 Oct.   Not                  L               C               C               O
-MSFragger-DIA [#MSFraggerDIA]_                     2020        Active               S               S               C & G           F
+Dear-DIA\ :sup:`XMBD` [#DearDIAXMBD]_              2023 June   Active               R               /               C & G           F
+MSFragger-DIA [#MSFraggerDIA]_                     2023 July   Active               S               S               C & G           F
 =================================================  ==========  ===================  ==============  ==============  ==============  ========
 
 .. note::
    - *Pub date (publication date)*: the date the tool was publicly released by publisher
-      - *Spectronaut* is noted by its public release date
+      - *Spectronaut* is noted by its public release date (first publication was in 2015 [#Spectronaut]_)
       - *PEAKS* is noted by the date it supported the analysis of DIA data (PEAKS X in 2018)
-      - *MSFragger-DIA* is noted by its function-available date
+      - *MSFragger-DIA* is noted by its related publication date (and the function has been available in 2020)
    - *Dev stat (development status)*
       - Active: has update of any type in last one year (e.g. response of question from authors on GitHub issues, document update, bug fix, and feature update)
       - Not: not active
@@ -275,7 +276,7 @@ back to table_
 
 :Reference: 
 
-.. [#DIANA] DIANA—algorithmic improvements for analysis of data-independent acquisition MS data. 10.1093/bioinformatics/btu686
+.. [#DIANA] DIANA-algorithmic improvements for analysis of data-independent acquisition MS data. 10.1093/bioinformatics/btu686
 
 ======================  =============================================================================================================================
 Full name               DIANA
@@ -729,7 +730,7 @@ back to table_
 
 :Reference: 
 
-.. [#CsoDIAq] CsoDIAq Software for Direct Infusion Shotgun Proteome Analysis. 10.1038/nmeth.3655
+.. [#CsoDIAq] CsoDIAq Software for Direct Infusion Shotgun Proteome Analysis. 10.1021/acs.analchem.1c02021
 
 ======================  =============================================================================================================================
 Full name               CsoDIAq
@@ -780,6 +781,35 @@ Scoring model           LSTM neural network and XGBoost
 ======================  =============================================================================================================================
 
 
+Dear-DIA\ :sup:`XMBD`
+^^^^^^^^^^^^^^^^^^^^^
+
+back to table_
+
+:Reference: 
+
+.. [#DearDIAXMBD] Dear-DIA\ :sup:`XMBD`: Deep Autoencoder Enables Deconvolution of Data-Independent Acquisition Proteomics. 2023. 10.34133/research.0179
+
+======================  =============================================================================================================================
+Full name               Dear-DIA\ :sup:`XMBD`
+Home page               https://github.com/jianweishuai/Dear-DIA-XMBD
+Source code             /
+Programming language    C++
+Authors                 Qingzu He et al.
+Lab & Company           Jianwei Shuai Lab & Jiahuai Han Lab
+Publication date        2023 June
+Analysis strategies     Spectra reconstruction
+======================  =============================================================================================================================
+
+:Function: spectra reconstruction
+
+======================  =============================================================================================================================
+Pre-processing          Latent representation extraction of fragment XICs via a VAE model
+Ion grouping criteria   k-means-based fragment representation clustering and CNN calculated fragment peak group similarity
+Fragment assignment     One-to-One
+======================  =============================================================================================================================
+
+
 MSFragger-DIA
 ^^^^^^^^^^^^^
 
@@ -795,7 +825,7 @@ Home page               https://msfragger.nesvilab.org & https://github.com/Nesv
 Programming language    Java
 Authors                 Fengchao Yu et al.
 Lab & Company           Nesvizhskii Lab
-Support date            2020
+Publication date        2023 July (function available in 2020)
 Analysis strategies     Sequence-based search
 ======================  =============================================================================================================================
 
@@ -806,4 +836,3 @@ Analysis approach       Spectrum-first
 SSM score               MSFragger hyperscore
 Matching restriction    1. Maximum PSMs per spectrum; 2. High PSM score-first signal picking
 ======================  =============================================================================================================================================
-
