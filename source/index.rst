@@ -1,7 +1,7 @@
 Appendix for a DIA review
 ========================================================
 
-This is an online appendix for a DIA review titled `Acquisition and analysis of DIA-based proteomic data: a survey in 2023 <--->`_.
+This is an online appendix for a DIA review titled `Acquisition and analysis of DIA-based proteomic data: a survey in 2023 <https://doi.org/10.1016/j.mcpro.2024.100712>`_.
 
 Table of Content
 ----------------
